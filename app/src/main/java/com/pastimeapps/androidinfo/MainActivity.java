@@ -15,8 +15,7 @@ import com.pastimeapps.androidinfo.helper.RequestPermissionHandler;
 public class MainActivity extends AppCompatActivity {
     private RequestPermissionHandler mRequestPermissionHandler;
 
-    TextView imei, wifiInfo, line;
-
+    TextView imei, wifiInfo, line, bluetooth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +31,14 @@ public class MainActivity extends AppCompatActivity {
         imei = findViewById(R.id.imei);
         wifiInfo = findViewById(R.id.wifiInfo);
         line = findViewById(R.id.line);
-
+        bluetooth = findViewById(R.id.bluetooth);
     }
 
     private void showPermmission(){
         mRequestPermissionHandler.requestPermission(this, new String[] {
                 Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_WIFI_STATE,
-                Manifest.permission.BLUETOOTH, Manifest.permission.ACCESS_COARSE_LOCATION
+                Manifest.permission.BLUETOOTH, Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION
         }, 123, new RequestPermissionHandler.RequestPermissionListener() {
             @Override
             public void onSuccess() {
@@ -47,10 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailed() {
-                Toast.makeText(MainActivity.this, "request permission failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getText(R.string.request_permission_failed), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     @Override
@@ -70,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
         wifiInfo.setText(getWifi.Wifi());
 
         GetBluetooth getBluetooth = new GetBluetooth(this);
-        getBluetooth.BlueTooth();
-
+        bluetooth.setText(getBluetooth.BlueTooth());
     }
 
 }

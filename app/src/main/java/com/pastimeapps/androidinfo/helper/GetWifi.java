@@ -1,8 +1,21 @@
 package com.pastimeapps.androidinfo.helper;
 
+import android.app.admin.DeviceAdminReceiver;
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.util.Log;
+
+import com.pastimeapps.androidinfo.R;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.util.Collections;
+import java.util.List;
 
 public class GetWifi {
 
@@ -28,8 +41,7 @@ public class GetWifi {
         final int NumOfRSSILevels = 5;
 
         String SSID = connectionInfo.getSSID();
-        String BSSID = connectionInfo.getBSSID();
-        String MacAdress = connectionInfo.getMacAddress();
+        String MacAdress =  connectionInfo.getMacAddress();
         int Frequence = connectionInfo.getFrequency();
         int LinkSpeed = connectionInfo.getLinkSpeed();
         int Rssi = connectionInfo.getRssi();
@@ -38,11 +50,10 @@ public class GetWifi {
 
         strWifiInfo +=
                         "SSID: " + SSID + "\n" +
-                        "BSSID: " + BSSID + "\n" +
-                        "IP Address: " + ipString + "\n" +
-                        "MAC Address: " + MacAdress + "\n" +
-                        "Frequency: " + Frequence + WifiInfo.FREQUENCY_UNITS + "\n" +
-                        "LinkSpeed: " + LinkSpeed + WifiInfo.LINK_SPEED_UNITS + "\n" +
+                        context.getText(R.string.ip_address) + ipString + "\n" +
+                        context.getText(R.string.mac_address) + MacAdress + "\n" +
+                        context.getText(R.string.frequence) + Frequence + WifiInfo.FREQUENCY_UNITS + "\n" +
+                        context.getText(R.string.link_speed) + LinkSpeed + WifiInfo.LINK_SPEED_UNITS + "\n" +
                         "Rssi: " + Rssi + "dBm" + "\n" +
                         "Rssi Level: " +
                         SignalLevel +

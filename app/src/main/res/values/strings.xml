@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">AndroidInfo</string>
+    <string name="info_phone">Info Phone</string>
+    <string name="not_found">Not Found</string>
+    <string name="info_wifi">Info Wifi</string>
+    <string name="info_bluetooth">Info Bluetooth</string>
+    <string name="request_permission_failed">request permission failed</string>
+    <string name="off">Off</string>
+    <string name="turning_off">Turning off</string>
+    <string name="on">On</string>
+    <string name="turning_on">Turning on</string>
+    <string name="bluetooth_not_found">Bluetooth not found</string>
+    <string name="ip_address">IP Address: </string>
+    <string name="mac_address">MAC Address: </string>
+    <string name="frequence">Frequency: </string>
+    <string name="link_speed">LinkSpeed: </string>
+    <string name="name">Name: </string>
+    <string name="state">State: </string>
+
 </resources>
