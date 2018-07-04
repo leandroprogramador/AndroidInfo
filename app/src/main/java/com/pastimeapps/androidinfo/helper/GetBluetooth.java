@@ -45,9 +45,9 @@ public class GetBluetooth {
 
         }
 
-        return context.getText(R.string.mac_address) + adress + "\n" +
+        return  context.getText(R.string.mac_address)  + adress + "\n" +
                 context.getText(R.string.name) + name + "\n" +
-                context.getText(R.string.state)+ nameState + "\n";
+                context.getText(R.string.state)  + nameState + "\n";
     }
 
     private String getBluetoothMacAddress() {

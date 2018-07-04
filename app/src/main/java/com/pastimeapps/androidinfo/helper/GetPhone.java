@@ -33,7 +33,7 @@ public class GetPhone {
             return null;
         }
         String line1Number = telephonyManager.getLine1Number();
-        return line1Number;
+        return line1Number .equals("") ? "(00) 00000-0000" : line1Number;
 
     }
 }

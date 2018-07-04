@@ -49,11 +49,11 @@ public class GetWifi {
         int SignalLevelMax = NumOfRSSILevels;
 
         strWifiInfo +=
-                        "SSID: " + SSID + "\n" +
-                        context.getText(R.string.ip_address) + ipString + "\n" +
-                        context.getText(R.string.mac_address) + MacAdress + "\n" +
-                        context.getText(R.string.frequence) + Frequence + WifiInfo.FREQUENCY_UNITS + "\n" +
-                        context.getText(R.string.link_speed) + LinkSpeed + WifiInfo.LINK_SPEED_UNITS + "\n" +
+                        "SSID:" + SSID + "\n" +
+                          context.getText(R.string.ip_address)   + ipString + "\n" +
+                          context.getText(R.string.mac_address)  + MacAdress  +  "\n" +
+                          context.getText(R.string.frequence)  +Frequence +  WifiInfo.FREQUENCY_UNITS + "\n" +
+                          context.getText(R.string.link_speed) +LinkSpeed +   WifiInfo.LINK_SPEED_UNITS + "\n" +
                         "Rssi: " + Rssi + "dBm" + "\n" +
                         "Rssi Level: " +
                         SignalLevel +

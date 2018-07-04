@@ -1,9 +1,10 @@
 package com.pastimeapps.androidinfo;
 
 import android.Manifest;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.text.Html;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void GetInfoAndroid(){
         GetPhone getPhone = new GetPhone(this);
-        imei.setText(getPhone.Imei());
-        line.setText(getPhone.LineNumber());
+        imei.setText("Imei: " + Html.fromHtml(getPhone.Imei(), Html.FROM_HTML_MODE_LEGACY));
+        line.setText("Phonenumber: " + Html.fromHtml(getPhone.LineNumber(), Html.FROM_HTML_MODE_LEGACY));
 
         GetWifi getWifi = new GetWifi(this);
         wifiInfo.setText(getWifi.Wifi());
